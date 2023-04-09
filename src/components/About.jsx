@@ -6,12 +6,13 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import img_me from "../assets/me.jpg";
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+      className='w-full bg-gradient-to-t from-indigo-500 via-purple-500 to-pink-500 p-[1px] rounded-[20px] shadow-card'
     >
       <div
         options={{
@@ -38,21 +39,33 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div 
+        variants={textVariant()} 
+        className="flex flex-col justify-center items-center w-full"
+      >
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <h2 className={styles.sectionHeadText}>About me.</h2>
+
+        <img 
+          src={img_me}
+          alt="Lucas Pereira Fullstack Developer"
+          className="w-[200px] my-8 rounded-full" 
+        />
+
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className='mt-4 text-secondary text-center text-[17px] max-w-3xl leading-[30px]'
+        >
+          Developer focused on always
+          learn and seek new
+          growth opportunities,
+          can provide a great
+          teamwork and a prosperous
+          income for the project.
+        </motion.p>
       </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-      >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
-      </motion.p>
+
 
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (

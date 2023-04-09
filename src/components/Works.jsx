@@ -52,16 +52,6 @@ const ProjectCard = ({
           <p className='mt-2 text-secondary text-[14px]'>{description}</p>
         </div>
 
-        <div className='mt-4 flex flex-wrap gap-2'>
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
-            </p>
-          ))}
-        </div>
       </Tilt>
     </motion.div>
   );
@@ -82,7 +72,7 @@ const Works = () => {
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
+          links to code repositories or to site. It reflects my
           ability to solve complex problems, work with different technologies,
           and manage projects effectively.
         </motion.p>
